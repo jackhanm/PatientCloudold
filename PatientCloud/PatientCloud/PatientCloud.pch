@@ -1,0 +1,31 @@
+//
+//  PatientCloud.pch
+//  PatientCloud
+//
+//  Created by yuhao on 16/6/2.
+//  Copyright © 2016年 infinitt. All rights reserved.
+//
+
+#ifndef PatientCloud_pch
+#define PatientCloud_pch
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "UIViewController+HUD.h"
+
+#define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+#define WIDGHT [[UIScreen mainScreen] bounds].size.width
+#define WIDTHSIXP 375.000000
+#define HEIGHTSIXP 667.000000
+#define HEIGHT  [[UIScreen mainScreen] bounds].size.height
+
+#define wUserInfo @"wUserInfo"
+
+
+
+
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PatientCloud_pch */
