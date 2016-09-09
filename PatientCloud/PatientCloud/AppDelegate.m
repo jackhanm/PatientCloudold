@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "UMSocial.h"
 #import "CloudHospitalVC.h"
-
+#import "AFNetworking.h"
 
 #import "UMSocialWechatHandler.h"
 #import "UMSocialQQHandler.h"
@@ -18,6 +18,7 @@
 //#import "MessageVC.h"
 //#import "MineVC.h"
 #import "LeftViewController.h"
+#import "JkDataShare.h"
 
 @interface AppDelegate ()
 @property (nonatomic,retain)UITabBarController *tarBC;
@@ -86,6 +87,39 @@
 //    self.tarBC.delegate = self;
     [self.window makeKeyAndVisible];
      self.window.rootViewController =  self.leftSlideVC ;
+    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"user"] length] &&[[[NSUserDefaults standardUserDefaults] objectForKey:@"key"] length]) {
+        NSDictionary *parameters = @{@"username" : [[NSUserDefaults standardUserDefaults] objectForKey:@"user"], //诊断号
+                                     
+                                     @"password" : [[NSUserDefaults standardUserDefaults] objectForKey:@"key"]
+                                     };
+        
+        NSString *urlString = @"http://wx.yunjiaopian.net/app/index.php/home/index/PatientLogin";
+        
+        AFHTTPSessionManager *managers = [AFHTTPSessionManager manager];
+        
+        //进行POST请求
+        [managers POST:urlString parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+            NSLog(@"请求成功，服务器返回的信息%@",responseObject);
+            if ([[responseObject objectForKey:@"code"] isEqualToString:@"0"]) {
+        
+                
+                
+             
+                [JkDataShare shareDatabase].isLogin = YES;
+                [JkDataShare shareDatabase].isTHirdLoginInfo = NO;
+                [JkDataShare shareDatabase].userID = [[responseObject objectForKey:@"data"] objectForKey:@"user_id"];
+                NSLog(@"%@", [JkDataShare shareDatabase].userID);
+                
+                
+                              
+                ;
+                
+            }
+        } failure:^(NSURLSessionDataTask *task, NSError * error) {
+            NSLog(@"请求失败,服务器返回的信息%@",error);     }];
+        
+
+    }
 //            NSLog(@"%@",NSHomeDirectory());
     
     NSLog(@"%@", NSHomeDirectory());

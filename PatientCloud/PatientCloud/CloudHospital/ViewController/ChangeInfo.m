@@ -261,7 +261,7 @@
     
     if (1 == indexPath.row) {
         cell.textfield.text = [UserInfoManager manager].userName;
-        cell.labeltitile.textColor = [UIColor redColor];
+     
         
     }
     if (2 == indexPath.row ) {

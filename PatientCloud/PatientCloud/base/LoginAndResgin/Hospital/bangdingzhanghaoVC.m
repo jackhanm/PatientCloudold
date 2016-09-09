@@ -15,6 +15,7 @@
 #import "JKdataBasehandle.h"
 #import "ThirdLoginModel.h"
 #import "UserInfoManager.h"
+
 @interface bangdingzhanghaoVC ()<UITextFieldDelegate>
 
 @property (nonatomic, assign) NSInteger number;
@@ -236,8 +237,54 @@
         [[NSUserDefaults standardUserDefaults]setObject:userDic forKey:wUserInfo];
       
                     }
+//绑定成功以后再登录
+    ThirdLoginModel *model = [[[JKdataBasehandle shareDatabase]selectByUseridOfuser:[UserInfoManager manager].usid] objectAtIndex:0];
+    NSDictionary *parameters = @{@"username" : model.phonenum, //诊断号
+                                 
+                                 @"password" : model.message//
+                                 };
     
+    NSString *urlString = @"http://wx.yunjiaopian.net/app/index.php/home/index/PatientLogin";
     
+    AFHTTPSessionManager *managers = [AFHTTPSessionManager manager];
+    
+    //进行POST请求
+    [managers POST:urlString parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"请求成功，服务器返回的信息%@",responseObject);
+        if ([[responseObject objectForKey:@"code"] isEqualToString:@"0"]) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+            
+            NSDictionary *userDic = @{
+                                      @"user_realname" : [[[responseObject objectForKey:@"data"] objectForKey:@"user_realname"] isEqual: [NSNull null]] ? @"":[[responseObject objectForKey:@"data"] objectForKey:@"user_realname"],
+                                      @"user_name" : model.thirdusername,
+                                      @"user_phone" : [[[responseObject objectForKey:@"data"] objectForKey:@"user_phone"] isEqual: [NSNull null]] ? @"":[[responseObject objectForKey:@"data"] objectForKey:@"user_phone"],
+                                      @"user_identifyid" : [[[responseObject objectForKey:@"data"] objectForKey:@"user_identify_code"] isEqual: [NSNull null]] ? @"":[[responseObject objectForKey:@"data"] objectForKey:@"user_identify_code"],
+                                      @"user_address" : [[[responseObject objectForKey:@"data"] objectForKey:@"user_province"] isEqual: [NSNull null]] ? @"":[[responseObject objectForKey:@"data"] objectForKey:@"user_province"],
+                                      @"user_id" : [[[responseObject objectForKey:@"data"] objectForKey:@"user_id"] isEqual: [NSNull null]] ? @"":[[responseObject objectForKey:@"data"] objectForKey:@"user_id"],
+                                      @"picture_path" : [[[responseObject objectForKey:@"data"] objectForKey:@"picture_path"]isEqualToString:@""] ? model.iconUrl:[[responseObject objectForKey:@"data"] objectForKey:@"picture_path"],
+                                      @"usid" : model.usid,
+                                      
+                                      
+                                      };
+            
+            [[NSUserDefaults standardUserDefaults]setObject:userDic forKey:wUserInfo];
+            [JkDataShare shareDatabase].isLogin = YES;
+            [JkDataShare shareDatabase].isTHirdLoginInfo = NO;
+            [JkDataShare shareDatabase].userID = [[UserInfoManager manager] user_id];
+            NSLog(@"%@", [JkDataShare shareDatabase].userID);
+            
+            
+            [[NSUserDefaults standardUserDefaults] setObject:model.phonenum forKey:@"user"];
+            [[NSUserDefaults standardUserDefaults] setObject:model.message  forKey:@"key"];
+
+            
+            
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError * error) {
+        NSLog(@"请求失败,服务器返回的信息%@",error);     }];
+    
+
+    [self.navigationController popViewControllerAnimated:YES];
     
 
 }

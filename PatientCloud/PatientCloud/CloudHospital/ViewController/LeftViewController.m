@@ -149,9 +149,9 @@
     }
     if (indexPath.row == 10) {
         
-        
-                   exit(0);
-
+        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"user"];
+        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"key"];
+        exit(0);
         
     }
 
@@ -174,12 +174,13 @@
     if (cell == nil) {
         cell = [[leftCelltitle alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellstr];
         cell.backgroundColor = [UIColor clearColor];
-        cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:21];
+        cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:21 / HEIGHTSIXP * HEIGHT];
         cell.delegate = self;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
         
             cell.labelname.text  = [[UserInfoManager manager] user_name];
+        cell.labelname.font = [UIFont systemFontOfSize:15.0/ HEIGHTSIXP * HEIGHT];
         
     //
     return cell;

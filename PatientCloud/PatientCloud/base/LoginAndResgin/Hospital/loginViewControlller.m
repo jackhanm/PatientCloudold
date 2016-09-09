@@ -394,10 +394,17 @@
                                         @"picture_path" : [[[responseObject objectForKey:@"data"] objectForKey:@"picture_path"] isEqual: [NSNull null]] ? @"":[[responseObject objectForKey:@"data"] objectForKey:@"picture_path"],
                                       };
             
-             [[NSUserDefaults standardUserDefaults]setObject:userDic forKey:wUserInfo];
+            [[NSUserDefaults standardUserDefaults]setObject:userDic forKey:wUserInfo];
             [JkDataShare shareDatabase].isLogin = YES;
             [JkDataShare shareDatabase].userID = [[responseObject objectForKey:@"data"] objectForKey:@"user_id"];
             NSLog(@"%@", [JkDataShare shareDatabase].userID);
+           
+            
+            [[NSUserDefaults standardUserDefaults] setObject:self.fieldlogin.text forKey:@"user"];
+            [[NSUserDefaults standardUserDefaults] setObject:self.fieldpassword.text  forKey:@"key"];
+            
+
+        
         }
     } failure:^(NSURLSessionDataTask *task, NSError * error) {
         NSLog(@"请求失败,服务器返回的信息%@",error);     }];
