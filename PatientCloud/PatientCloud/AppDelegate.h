@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 #import "LeftSlideViewController.h"
+static NSString *appKey = @"b3bd95622e7c4d6f278a05ea";
+static NSString *channel = @"Publish channel";
+static BOOL isProduction = FALSE;
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

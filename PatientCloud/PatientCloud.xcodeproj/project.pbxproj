@@ -379,6 +379,11 @@
 		66BE69FC1CCE18BE00D4CF19 /* CloudHospitalFirstCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BE69FB1CCE18BE00D4CF19 /* CloudHospitalFirstCell.m */; };
 		66BE69FF1CCE213800D4CF19 /* CloudHospatilSecondCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BE69FE1CCE213700D4CF19 /* CloudHospatilSecondCell.m */; };
 		66C12F631D5DBBAB000ED05E /* writebinglicell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C12F621D5DBBAB000ED05E /* writebinglicell.m */; };
+		66CF91B91D82A11A00765156 /* jpush-ios-2.1.9.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CF91B81D82A11A00765156 /* jpush-ios-2.1.9.a */; };
+		66CF91BB1D82A15700765156 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CF91BA1D82A15700765156 /* CFNetwork.framework */; };
+		66CF91BD1D82A16B00765156 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CF91BC1D82A16B00765156 /* CoreFoundation.framework */; };
+		66CF91BF1D82A18800765156 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CF91BE1D82A18800765156 /* Foundation.framework */; };
+		66CF91C11D82A19700765156 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CF91C01D82A19700765156 /* UIKit.framework */; };
 		66EB122D1D334C2C005E2226 /* leftvcCellnormol.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EB122C1D334C2C005E2226 /* leftvcCellnormol.m */; };
 		66EF72FB1D66993B00E94009 /* CloudMyImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EF72FA1D66993B00E94009 /* CloudMyImageCell.m */; };
 		66F52D521D5056B9007B3139 /* loginViewControlller.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F52D511D5056B9007B3139 /* loginViewControlller.m */; };
@@ -1170,6 +1175,12 @@
 		66BE69FE1CCE213700D4CF19 /* CloudHospatilSecondCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudHospatilSecondCell.m; sourceTree = "<group>"; };
 		66C12F611D5DBBAB000ED05E /* writebinglicell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = writebinglicell.h; sourceTree = "<group>"; };
 		66C12F621D5DBBAB000ED05E /* writebinglicell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = writebinglicell.m; sourceTree = "<group>"; };
+		66CF91B71D82A0F100765156 /* JPUSHService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
+		66CF91B81D82A11A00765156 /* jpush-ios-2.1.9.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-2.1.9.a"; sourceTree = "<group>"; };
+		66CF91BA1D82A15700765156 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		66CF91BC1D82A16B00765156 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		66CF91BE1D82A18800765156 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		66CF91C01D82A19700765156 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		66EB122B1D334C2C005E2226 /* leftvcCellnormol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = leftvcCellnormol.h; sourceTree = "<group>"; };
 		66EB122C1D334C2C005E2226 /* leftvcCellnormol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = leftvcCellnormol.m; sourceTree = "<group>"; };
 		66EF72F91D66993B00E94009 /* CloudMyImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudMyImageCell.h; sourceTree = "<group>"; };
@@ -1196,6 +1207,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66CF91C11D82A19700765156 /* UIKit.framework in Frameworks */,
+				66CF91BF1D82A18800765156 /* Foundation.framework in Frameworks */,
+				66CF91BD1D82A16B00765156 /* CoreFoundation.framework in Frameworks */,
+				66CF91BB1D82A15700765156 /* CFNetwork.framework in Frameworks */,
 				66F52D661D509BB4007B3139 /* libz.tbd in Frameworks */,
 				66862D871D6C433800F56F45 /* libSocialWechat.a in Frameworks */,
 				66862D881D6C433800F56F45 /* libWeChatSDK.a in Frameworks */,
@@ -1209,6 +1224,7 @@
 				66862D781D6C3FE300F56F45 /* Security.framework in Frameworks */,
 				66862D761D6C3FD400F56F45 /* ImageIO.framework in Frameworks */,
 				66862DA21D6C436A00F56F45 /* libSocialQQ.a in Frameworks */,
+				66CF91B91D82A11A00765156 /* jpush-ios-2.1.9.a in Frameworks */,
 				66862D9A1D6C436800F56F45 /* libSocialSinaSSO.a in Frameworks */,
 				66862D9B1D6C436800F56F45 /* libWeiboSDK.a in Frameworks */,
 				66F52D681D509BC2007B3139 /* libicucore.tbd in Frameworks */,
@@ -2541,6 +2557,8 @@
 			isa = PBXGroup;
 			children = (
 				662D669C1D54885C000E9242 /* LBXScan */,
+				66CF91B71D82A0F100765156 /* JPUSHService.h */,
+				66CF91B81D82A11A00765156 /* jpush-ios-2.1.9.a */,
 				66BE69EF1CCE0C3A00D4CF19 /* 图片 */,
 				66BE69971CCDF67400D4CF19 /* Lib */,
 				66862D4D1D6C3D6000F56F45 /* UMSocial_Sdk_5.2.1 */,
@@ -2675,6 +2693,10 @@
 		C559BCAC720CAEC538BB4896 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				66CF91C01D82A19700765156 /* UIKit.framework */,
+				66CF91BE1D82A18800765156 /* Foundation.framework */,
+				66CF91BC1D82A16B00765156 /* CoreFoundation.framework */,
+				66CF91BA1D82A15700765156 /* CFNetwork.framework */,
 				66862D7D1D6C402600F56F45 /* CoreTelephony.framework */,
 				66862D7B1D6C400F00F56F45 /* CoreGraphics.framework */,
 				66862D791D6C3FF100F56F45 /* libiconv.tbd */,
@@ -3405,10 +3427,11 @@
 					"$(PROJECT_DIR)/PatientCloud/Healthy/ViewController/ThirdParty/UMSocial_Sdk_5.2.1/Wechat",
 					"$(PROJECT_DIR)/PatientCloud/Healthy/ViewController/ThirdParty/UMSocial_Sdk_5.2.1/SinaSSO",
 					"$(PROJECT_DIR)/PatientCloud/Healthy/ViewController/ThirdParty/UMSocial_Sdk_5.2.1/TencentOpenAPI",
+					"$(PROJECT_DIR)/PatientCloud/Healthy/ViewController/ThirdParty",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yunpin.PatientCloud;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "61f179fd-870c-40ad-84b6-a50e9fa3f618";
+				PROVISIONING_PROFILE = "b6316a0b-9a4b-463b-87c1-a0b6bd75d254";
 			};
 			name = Debug;
 		};
@@ -3437,10 +3460,11 @@
 					"$(PROJECT_DIR)/PatientCloud/Healthy/ViewController/ThirdParty/UMSocial_Sdk_5.2.1/Wechat",
 					"$(PROJECT_DIR)/PatientCloud/Healthy/ViewController/ThirdParty/UMSocial_Sdk_5.2.1/SinaSSO",
 					"$(PROJECT_DIR)/PatientCloud/Healthy/ViewController/ThirdParty/UMSocial_Sdk_5.2.1/TencentOpenAPI",
+					"$(PROJECT_DIR)/PatientCloud/Healthy/ViewController/ThirdParty",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yunpin.PatientCloud;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "61f179fd-870c-40ad-84b6-a50e9fa3f618";
+				PROVISIONING_PROFILE = "b6316a0b-9a4b-463b-87c1-a0b6bd75d254";
 			};
 			name = Release;
 		};
