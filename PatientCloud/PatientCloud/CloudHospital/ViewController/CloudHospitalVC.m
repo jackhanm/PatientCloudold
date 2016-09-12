@@ -120,7 +120,7 @@
                     [JkDataShare shareDatabase].isTHirdLoginInfo = NO;
                     [JkDataShare shareDatabase].userID = [[UserInfoManager manager] user_id];
                     NSLog(@"%@", [JkDataShare shareDatabase].userID);
-                    
+                     
                     
                     [[NSUserDefaults standardUserDefaults] setObject:model.phonenum forKey:@"user"];
                     [[NSUserDefaults standardUserDefaults] setObject:model.message  forKey:@"key"];
